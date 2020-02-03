@@ -1,0 +1,96 @@
+
+<div class="container">
+  <h1>Register</h1>
+  <form (ngSubmit)="onSubmit(f)" #f="ngForm">  
+    <div class="field-container">
+      <div class="row align-right">
+        <label for="firstname">Name</label>
+      </div>
+      <div class="row">
+        <input 
+          type="text"
+          id="firstname"
+          class="form-control"
+          name="firstname"
+          ngModel
+          required
+          #firstname="ngModel">
+        <div *ngIf="firstname.invalid && (firstname.dirty || firstname.touched)"
+            class="required-field">
+              <div *ngIf = "firstname.errors?.required">
+                  First name field can't be blank
+              </div>
+        </div>
+      </div>
+      <div class="row align-right">
+        <label for="lastname">Last Name</label>
+      </div>
+      <div class="row">
+        <input 
+          type="text"
+          id="lastname"
+          class="form-control"
+          name="lastname"
+          ngModel
+          required
+          #lastname="ngModel">
+        <div *ngIf="lastname.invalid && (lastname.dirty || lastname.touched)"
+            class="required-field">
+              <div *ngIf = "lastname.errors?.required">
+                  Last name field can't be blank
+              </div>
+        </div>
+      </div>  
+      <div class="row align-right">
+        <label for="idNumber">Id Number</label>
+      </div>
+      <div class="row">
+        <input 
+          type="text"
+          id="idNumber"
+          class="form-control"
+          name="idNumber"
+          ngModel
+          required
+          #idNumber="ngModel">
+        <div *ngIf="idNumber.invalid && (idNumber.dirty || idNumber.touched)"
+            class="required-field">
+              <div *ngIf = "idNumber.errors?.required">
+                  Identification number field can't be blank
+              </div>
+        </div>
+      </div>
+      <div class="row align-right">
+        <label for="expeditionDate">Expedition Date</label>
+      </div>
+      <div class="row">
+        <input 
+          type="text"
+          id="expeditionDate"
+          class="form-control"
+          name="expeditionDate"
+          ngModel
+          required
+          #expeditionDate="ngModel">
+        <div *ngIf="expeditionDate.invalid && (expeditionDate.dirty || expeditionDate.touched)"
+            class="required-field">
+              <div *ngIf = "expeditionDate.errors?.required">
+                Expedition Date number field can't be blank
+              </div>
+        </div>
+      </div>    
+      <div class="row align-right">
+        <button
+          class="btn btn-success"
+          type="submit"
+          [disabled]="!f.valid">Register</button>
+        </div>    
+      <div class="row">
+        <button
+          class="btn btn-success"
+          type="button"
+          (click)="onClear()">Clear</button>
+      </div>
+    </div>
+  </form>
+</div>

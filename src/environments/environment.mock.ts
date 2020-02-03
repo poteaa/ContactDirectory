@@ -4,9 +4,9 @@
 
 export const environment = {
   production: false,
-  backendUrl: 'http://localhost:1010/api/',
-  identificationServiceUrl: 'http://localhost:1010/api/',
-  judicialServiceUrl: 'http://localhost:1010/api/'
+  backendUrl: 'http://mocklocalhost/api/',
+  identificationServiceUrl: 'http://mockidentification/api/',
+  judicialServiceUrl: 'http://mockjudicial/api/'
 };
 
 /*
